@@ -3,6 +3,11 @@ package app;
 public class Websodio extends Episodio {
     public String url;
 
+    public Websodio(int numero, String nombre) {
+        super(numero, nombre);
+        this.url = "http://movies.com";
+    }
+
     /**
      * hace un override del metodo reproducir que estaba en Episodio
      */

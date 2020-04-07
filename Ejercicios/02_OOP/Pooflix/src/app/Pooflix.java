@@ -78,6 +78,10 @@ public class Pooflix {
 
         theWalkingDead.titulo = "The Walking Dead";
 
+        Serie theWD2 = theWalkingDead;
+
+        // theWD2.titulo = "hOLA MANOTAS";
+
         Genero genero = new Genero();
 
         genero.nombre = "post-apocaliptica";
@@ -88,7 +92,7 @@ public class Pooflix {
         t4.numero = 4;
 
         // AGrego un websodio
-        Websodio websodio = new Websodio();
+        Websodio websodio = new Websodio(1, "A new Day");
 
         websodio.numero = 1;
         websodio.nombre = "A New Day";
@@ -97,28 +101,18 @@ public class Pooflix {
         websodio.url = "http.//jajaj.com";
         t4.episodios.add(websodio);
 
-        websodio = new Websodio();
+        websodio = new Websodio(2, "Alone");
 
-        websodio.numero = 2;
-        websodio.nombre = "Alone";
         websodio.duracion = 20;
         websodio.url = "http.//jajaja.com";
 
         t4.episodios.add(websodio);
 
-        Episodio epii = new Episodio();
-
-        epii.numero = 8;
-        epii.nombre = "Too Far Gone";
-        epii.duracion = 43;
+        Episodio epii = new Episodio(8, "Too Far Gone", 43);
 
         t4.episodios.add(epii);
 
-        Episodio epiii = new Episodio();
-
-        epiii.numero = 9;
-        epiii.nombre = "After";
-        epiii.duracion = 43;
+        Episodio epiii = new Episodio(9, "After", 43);
 
         t4.episodios.add(epiii);
 
@@ -128,10 +122,10 @@ public class Pooflix {
 
         t7.numero = 7;
 
-        Episodio epp = new Episodio();
+        Episodio epp = new Episodio(1, "The Day Will Come When You Won't Be");
 
-        epp.numero = 1;
-        epp.nombre = "The Day Will Come When You Won't Be";
+        // epp.numero = 1;
+        // epp.nombre = "The Day Will Come When You Won't Be";
         epp.duracion = 45;
 
         t7.episodios.add(epp);
