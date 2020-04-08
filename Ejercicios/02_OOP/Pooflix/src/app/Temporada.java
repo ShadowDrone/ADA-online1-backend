@@ -22,7 +22,7 @@ public class Temporada {
         // Devolver esa episodio
 
         for (Episodio epi : this.episodios) {
-            if (epi.numero == nro) {
+            if (epi.getNumero() == nro) {
                 return epi;
             }
 
@@ -44,7 +44,7 @@ public class Temporada {
         // Devolver esa episodio
 
         for (Episodio epi : this.episodios) {
-            if (epi.nombre.equalsIgnoreCase(nombre)) {
+            if (epi.getNombre().equalsIgnoreCase(nombre)) {
                 return epi;
             }
 
@@ -75,7 +75,7 @@ public class Temporada {
 
         int pos = 0;
         for (Episodio epi : this.episodios) {
-            if (epi.numero == nro) {
+            if (epi.getNumero() == nro) {
                 return pos;
             }
             pos++;

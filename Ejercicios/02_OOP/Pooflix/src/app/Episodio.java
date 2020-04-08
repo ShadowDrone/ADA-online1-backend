@@ -5,10 +5,6 @@ package app;
  */
 public class Episodio {
 
-    public int numero;
-    public String nombre;
-    public double duracion;
-
     public Episodio() {
         this.duracion = 40;
     }
@@ -28,7 +24,38 @@ public class Episodio {
 
     }
 
+    private int numero;
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    private String nombre;
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    private double duracion;
+
+    public double getDuracion() {
+        return duracion;
+    }
+
+    public void setDuracion(double duracion) {
+        this.duracion = duracion;
+    }
+
     public void reproducir() {
         System.out.println("Reproduciendo episodio " + this.numero + " " + this.nombre);
     }
+
 }
