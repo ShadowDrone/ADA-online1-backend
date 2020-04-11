@@ -3,6 +3,9 @@ package app;
 import java.util.ArrayList;
 import java.util.List;
 
+import app.personas.Actor;
+import app.personas.Persona;
+
 /**
  * Pooflix
  */
@@ -10,6 +13,7 @@ public class Pooflix {
 
     public List<Pelicula> peliculas = new ArrayList<Pelicula>();
     public List<Serie> series = new ArrayList<Serie>();
+    public List<INominable> nominados = new ArrayList<>();
 
     public Serie buscarSerie(String titulo) {
 
@@ -39,10 +43,36 @@ public class Pooflix {
 
     }
 
+    public void agregarInception() {
+
+        Pelicula pelicula = new Pelicula();
+        pelicula.titulo = "Inception";
+
+        Actor actor = new Actor();
+        actor.nombre = "Leonardo Di Caprio";
+
+        pelicula.actores.add(actor);
+
+        this.peliculas.add(pelicula);
+
+        this.nominados.add(pelicula);
+
+        INominable peliNomidada = pelicula;
+        pelicula.pausar();
+        ((Pelicula)peliNomidada).pausar();
+
+    }
     public void agregarBreakingBad() {
 
         Serie breakingB = new Serie();
         breakingB.titulo = "Breaking Bad";
+
+        Actor actor1 = new Actor();
+        actor1.nombre = "Brian Crasnton";
+
+        this.nominados.add(actor1);
+
+        breakingB.actores.add(actor1);
 
         Genero genero = new Genero();
         genero.nombre = "Drama";
