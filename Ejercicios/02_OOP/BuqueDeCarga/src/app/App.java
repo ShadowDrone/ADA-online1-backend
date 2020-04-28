@@ -20,14 +20,13 @@ public class App {
     public static List<Puerto> Puertos = new ArrayList();
 
     public static void main(String[] args) throws Exception {
-        
-        //Inicializo los puertos principales;
+
+        // Inicializo los puertos principales;
         GenerarPuertosPorDefecto();
 
         Buque buque = new Buque();
 
-
-        for(int i = 0; i < 6; i++){
+        for (int i = 0; i < 6; i++) {
             Contenedor contenedor = new Contenedor();
             System.out.println("Ingrese ID del contenedor: ");
             String idContenedor = Teclado.nextLine();
@@ -41,7 +40,7 @@ public class App {
             Teclado.nextLine();
             // buscar puerto, esto puede ser un metodo fuera del for
             for (Puerto p : Puertos) {
-                if(p.getNumeroPuerto() == numeroPuerto){
+                if (p.getNumeroPuerto() == numeroPuerto) {
                     contenedor.setPuerto(p);
                 }
             }
@@ -53,13 +52,13 @@ public class App {
 
         for (Puerto p : Puertos) {
 
-            System.out.println("La cantidad de contenedores a trasladar es: " 
-            + buque.contarContenedores(p.getNumeroPuerto()));
-            
+            System.out.println(
+                    "La cantidad de contenedores a trasladar es: " + buque.contarContenedores(p.getNumeroPuerto()));
+
         }
     }
 
-    public static void GenerarPuertosPorDefecto(){
+    public static void GenerarPuertosPorDefecto() {
         Puerto puerto = new Puerto();
         puerto.setNumeroPuerto(1);
         puerto.setNombrePuerto("Puerto San Martín");
