@@ -1,5 +1,7 @@
 package ar.com.ada.abmcliente;
 
+import java.math.BigDecimal;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -95,6 +97,15 @@ public class ABM {
 
         if (domAlternativo != null)
             cliente.setDomicilioAlternativo(domAlternativo);
+
+        Prestamo prestamo = new Prestamo();
+        BigDecimal importePrestamo = new BigDecimal(5000);
+        prestamo.setImporte(importePrestamo); //forma 1
+        prestamo.setFecha(new Date()); //Fecha Actual de la maquina forma 2.
+        prestamo.setFechaAlta(new Date());//Fecha generada por la maquina. Esta fecha no debe venir de front.
+        prestamo.setCuotas(10); //Le vamos a dar 10 cuotas por defecto
+        prestamo.setCliente(cliente);
+        
 
         ABMCliente.create(cliente);
 

@@ -1,5 +1,8 @@
 package ar.com.ada.abmcliente.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 
 import ar.com.ada.abmcliente.excepciones.*;
@@ -16,6 +19,9 @@ public class Cliente {
     private String domicilio;
     @Column(name = "domicilio_alternativo")
     private String domicilioAlternativo;
+
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Prestamo> prestamos = new ArrayList<>();
 
     public Cliente(String nombre) {
         this.nombre = nombre;
@@ -74,6 +80,14 @@ public class Cliente {
 
     public void setDomicilioAlternativo(String domicilioAlternativo) {
         this.domicilioAlternativo = domicilioAlternativo;
+    }
+
+    public List<Prestamo> getPrestamos() {
+        return prestamos;
+    }
+
+    public void setPrestamos(List<Prestamo> prestamos) {
+        this.prestamos = prestamos;
     }
 
 }
